@@ -33,14 +33,13 @@ export class HelloWorld extends React.Component<IHelloWorldProps> {
     const newItems: IItem[] = [];
     for (let i = 0; i < 6; i++) {
       newItems.push({
-  
         id: i.toString(),
         name: this.makeid(5)
       });
     }
     return newItems;
-    // this.setState({ items: newItems });
   }
+
   private renderItemColumn = (item: IItem, index: number | undefined, column: IColumn | undefined): JSX.Element => {
     const fieldContent = item[column!.fieldName as keyof IItem] as string;
 
@@ -69,8 +68,6 @@ export class HelloWorld extends React.Component<IHelloWorldProps> {
   private itemInvoked = (item: IItem, column: IColumn) => {
     console.log("this is the item: ", item);
     console.log("this is the item prop ", this.props.text);
-    
-
   }
 
   public render(): React.ReactNode {
